@@ -1,5 +1,6 @@
 module HerokuappScreenObjects
   include Capybara
+  include Test::Unit::Assertions
 
   def preenche_nome_usuario valor
     fill_in @nome_usuario, :with => valor
@@ -11,11 +12,13 @@ module HerokuappScreenObjects
 
   def clica local
     click_on local
+    espera_por 1
   end
 
   def tem_mensagem? mensagem
-    page.has_content? mensagem
-  end
+    messagem_bem_vindo_pagina = page.find(:id, @id_mensagens).text.to_s
+    assert messagem_bem_vindo_pagina.include? mensagem
+end
 
   def espera_por segundos
     sleep segundos
@@ -23,6 +26,5 @@ module HerokuappScreenObjects
 
   def acessa_herokuapp
     visit @https_site
-    tem_mensagem? "Login Page"
   end
 end

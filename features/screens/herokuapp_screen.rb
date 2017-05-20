@@ -9,5 +9,6 @@ class HerokuappScreen
     @nome_usuario = "username"
     @senha = "password"
     @https_site = "https://the-internet.herokuapp.com/login"
+    @id_mensagens = "flash"
   end
 end
