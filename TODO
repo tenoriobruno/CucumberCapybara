@@ -1,3 +1,8 @@
 [Refatoração]
   [ ] remover os informações de login do .feature.
   [ ] criar um arquivo de credencias
+
+[Novo]
+  [ ] inserir webdriver do chrome
+  [ ] inserir webdriver do ie
+  [ ] possibilitar a escolha de um browser pra rodar os testes
